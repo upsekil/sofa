@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yayasan Sofa Aceh - Membangun Generasi Rabbani</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Plus Jakarta Sans (Modern & Clean) -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9', // Sky Blue base
+                            600: '#0284c7', // Primary Blue
+                            700: '#0369a1',
+                            800: '#075985', // Deep Blue
+                            900: '#0c4a6e',
+                            gold: '#fbbf24', // Accent Gold
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+                        'glow': '0 0 15px rgba(14, 165, 233, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(12, 74, 110, 0.9), rgba(3, 105, 161, 0.85)), url('https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .pattern-grid {
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700 antialiased relative">
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/6281234567890" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center transition-transform hover:scale-110 group animate-bounce-slow">
+        <i class="fab fa-whatsapp text-3xl"></i>
+        <span class="absolute right-16 bg-white text-slate-800 px-3 py-1 rounded-lg text-sm font-bold shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Hubungi Kami</span>
+    </a>
+
+    <!-- TOP BAR (INFO) -->
+    <div class="bg-brand-900 text-slate-300 py-2 text-xs md:text-sm hidden md:block border-b border-brand-800">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+            <div class="flex gap-6">
+                <span><i class="fas fa-envelope mr-2"></i>info@yayasansofaaceh.com</span>
+                <span><i class="fas fa-phone mr-2"></i>+62 812-3456-7890</span>
+            </div>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-soft border-b border-slate-100" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhq0JnEgRuwQY7DPTRdOeKwlSS7cAX5LKeuD8K_Siyny5Sm0sUE6AVz5gWCikeCT6ksE0eAglo2igDnAOUwiZk6deaHM6-TLj6RB-DSPQv5lWS84hMJxuMF5GviIBREXrVXZ-tuvMp-m2GQece9cB5Sk6JhkvBMzfB8nXBsK8nH33Ggnz6cz_9ZGENVgMM/s1600/LOGO%20BUSTAN%20SOFA.jpg" 
+                         alt="Logo Yayasan Sofa Aceh" 
+                         class="h-12 w-auto md:h-14 rounded-full shadow-sm object-contain">
+                    <div>
+                        <h1 class="text-xl font-bold text-slate-900 leading-none tracking-tight">Yayasan Sofa Aceh</h1>
+                        <span class="text-xs text-brand-600 font-bold uppercase tracking-wider">Pendidikan & Dakwah</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-slate-600 hover:text-brand-600 font-semibold transition">Beranda</a>
+                    <a href="#about" class="text-slate-600 hover:text-brand-600 font-semibold transition">Tentang Kami</a>
+                    <a href="#units" class="text-slate-600 hover:text-brand-600 font-semibold transition">Unit</a>
+                    <a href="#infaq" class="text-slate-600 hover:text-brand-600 font-semibold transition">Infaq</a>
+                    <a href="#news" class="text-slate-600 hover:text-brand-600 font-semibold transition">Berita</a>
+                    <a href="#contact" class="px-6 py-2.5 bg-brand-600 text-white rounded-full font-bold hover:bg-brand-700 transition shadow-lg shadow-brand-500/30 transform hover:-translate-y-0.5">
+                        Hubungi Kami
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-600 focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-xl">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#home" class="block px-3 py-3 text-slate-600 hover:text-brand-600 hover:bg-brand-50 rounded-lg font-medium border-b border-slate-50">Beranda</a>
+                <a href="#about" class="block px-3 py-3 text-slate-600 hover:text-brand-600 hover:bg-brand-50 rounded-lg font-medium border-b border-slate-50">Tentang Kami</a>
+                <a href="#units" class="block px-3 py-3 text-slate-600 hover:text-brand-600 hover:bg-brand-50 rounded-lg font-medium border-b border-slate-50">Unit Pendidikan</a>
+                <a href="#infaq" class="block px-3 py-3 text-slate-600 hover:text-brand-600 hover:bg-brand-50 rounded-lg font-medium border-b border-slate-50">Program Infaq</a>
+                <a href="#contact" class="block px-3 py-3 text-brand-600 font-bold bg-brand-50 rounded-lg mt-2">Hubungi Kami</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-bg min-h-[650px] flex items-center relative overflow-hidden">
+        <!-- Decorative shapes -->
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-brand-900/50 to-transparent pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left">
+                    <span class="inline-block py-1.5 px-4 rounded-full bg-brand-500/20 border border-brand-400/30 text-brand-100 text-sm font-bold mb-6 backdrop-blur-md uppercase tracking-wider">
+                        <i class="fas fa-star text-brand-gold mr-2"></i> Khazanah Pendidikan Islam Aceh
+                    </span>
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
+                        Membangun Generasi <span class="text-brand-500">Rabbani</span> & Berakhlak Mulia
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-200 mb-10 leading-relaxed font-light">
+                        Yayasan Sofa Aceh hadir sebagai wadah pembinaan umat melalui pendidikan usia dini (PAUD) berkualitas dan majelis ilmu yang menghidupkan hati.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#infaq" class="px-8 py-4 bg-brand-500 text-white rounded-full font-bold hover:bg-brand-400 transition shadow-glow flex items-center justify-center gap-2 group">
+                            Salurkan Infaq <i class="fas fa-heart text-white group-hover:scale-110 transition"></i>
+                        </a>
+                        <a href="#about" class="px-8 py-4 bg-transparent border-2 border-slate-300/30 text-white rounded-full font-bold hover:bg-white/10 transition backdrop-blur-sm">
+                            Tentang Kami
+                        </a>
+                    </div>
+                </div>
+                <!-- Hero Image/Video Placeholder -->
+                <div class="hidden lg:block relative">
+                    <div class="absolute inset-0 bg-brand-600 rounded-2xl transform rotate-6 opacity-20 blur-lg"></div>
+                    <!-- Frame putih (bg-white p-2) telah dihapus, ditambahkan overflow-hidden agar sudut foto tetap tumpul -->
+                    <div class="relative rounded-2xl shadow-2xl transform rotate-3 hover:rotate-0 transition duration-500 overflow-hidden group">
+                        <img src="https://linggaupos.bacakoran.co/upload/5fb9e899da2dd5cc95d496e7cbc584c7.jpg" alt="Santri Mengaji" class="w-full object-cover h-[450px]">
+                        <!-- New Gradient Effect -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-900/80 via-transparent to-transparent opacity-80"></div>
+                        
+                        <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur p-4 rounded-xl shadow-lg flex items-center gap-4 z-10">
+                            <div class="w-12 h-12 bg-brand-100 rounded-full flex items-center justify-center text-brand-600 text-xl">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-semibold uppercase">Moto Kami</p>
+                                <p class="text-sm font-bold text-slate-800">"Mendidik dengan Hati, Mengabdi untuk Ilahi"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Stats Bar (New Feature) -->
+        <div class="absolute bottom-0 w-full bg-brand-900/80 backdrop-blur-md border-t border-white/10">
+            <div class="max-w-7xl mx-auto px-4 py-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white divide-x divide-white/10">
+                    <div>
+                        <p class="text-3xl font-bold text-brand-500">5</p>
+                        <p class="text-xs text-slate-300 uppercase tracking-widest mt-1">Tahun Mengabdi</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-bold text-brand-500">50+</p>
+                        <p class="text-xs text-slate-300 uppercase tracking-widest mt-1">Alumni PAUD</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-bold text-brand-500">100%</p>
+                        <p class="text-xs text-slate-300 uppercase tracking-widest mt-1">Kurikulum Islami</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-bold text-brand-500">2</p>
+                        <p class="text-xs text-slate-300 uppercase tracking-widest mt-1">Cabang Unit</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SAMBUTAN KETUA & VISI MISI (Redesigned) -->
+    <section id="about" class="py-24 bg-white relative overflow-hidden">
+        <!-- Background Decoration -->
+        <div class="absolute top-0 left-0 w-full h-full pattern-grid opacity-30 pointer-events-none"></div>
+        <div class="absolute top-10 right-10 w-64 h-64 bg-brand-50 rounded-full blur-3xl opacity-60"></div>
+        <div class="absolute bottom-10 left-10 w-48 h-48 bg-green-50 rounded-full blur-3xl opacity-60"></div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Salam Header -->
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-brand-50 text-brand-600 rounded-full mb-6 shadow-sm">
+                    <i class="fas fa-hands-praying text-2xl"></i>
+                </div>
+                <h2 class="text-brand-600 font-bold uppercase tracking-widest text-sm mb-3">Kata Sambutan</h2>
+                <h3 class="text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+                    Assalamualaikum <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-brand-400">Warahmatullahi Wabarakatuh</span>
+                </h3>
+            </div>
+
+            <!-- Content Container -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <!-- Sambutan Text -->
+                <div class="lg:col-span-7 bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-slate-100 relative">
+                    <i class="fas fa-quote-right absolute top-8 right-8 text-6xl text-slate-100 -z-10"></i>
+                    <h4 class="text-2xl font-bold text-slate-800 mb-6 border-l-4 border-brand-500 pl-4">Meneruskan Risalah Dakwah & Pendidikan</h4>
+                    <div class="prose prose-slate text-slate-600 leading-relaxed text-lg space-y-4">
+                        <p>
+                            "Yayasan Sofa Aceh didirikan dengan niat tulus untuk menjadi benteng akidah dan moral bagi generasi muda Aceh. Kami hadir di tengah masyarakat Dusun Kayee Adang sebagai oase ilmu."
+                        </p>
+                        <p>
+                            Melalui <strong>PAUD Bustan As Sofa</strong>, kami menanamkan benih cinta Al-Quran sejak usia dini. Dan melalui <strong>Majelis Zawiyah Idrisiah</strong>, kami merangkul masyarakat dalam kesejukan dzikir dan pendalaman ilmu agama.
+                        </p>
+                        <p>
+                            Mari bersama-sama mendukung visi mulia ini. Setiap langkah kecil kita dalam kebaikan adalah investasi abadi untuk akhirat kelak.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-slate-100 flex items-center gap-4">
+                        <div class="flex-1">
+                            <p class="text-sm font-semibold text-slate-900">Pengurus Yayasan Sofa Aceh</p>
+                            <p class="text-xs text-brand-600">Khidmat Untuk Umat</p>
+                        </div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Basmala.svg/1200px-Basmala.svg.png" alt="Bismillah" class="h-8 opacity-50">
+                    </div>
+                </div>
+
+                <!-- Visi Misi Cards -->
+                <div class="lg:col-span-5 space-y-6">
+                    <!-- Visi Card -->
+                    <div class="group bg-gradient-to-br from-brand-600 to-brand-800 p-8 rounded-3xl shadow-lg text-white relative overflow-hidden transform transition hover:-translate-y-1">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-16 -mt-16"></div>
+                        <div class="relative z-10">
+                            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
+                                <i class="fas fa-bullseye text-2xl"></i>
+                            </div>
+                            <h5 class="text-xl font-bold mb-2">Visi Kami</h5>
+                            <p class="text-brand-100 leading-relaxed">
+                                Menjadi pusat peradaban Islam yang melahirkan generasi Qurani, cerdas secara intelektual, dan mulia secara spiritual.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Misi Card -->
+                    <div class="group bg-white p-8 rounded-3xl shadow-lg border-2 border-slate-50 relative overflow-hidden transform transition hover:-translate-y-1">
+                        <div class="relative z-10">
+                            <div class="w-12 h-12 bg-brand-50 text-brand-600 rounded-xl flex items-center justify-center mb-4">
+                                <i class="fas fa-list-ul text-2xl"></i>
+                            </div>
+                            <h5 class="text-xl font-bold text-slate-900 mb-4">Misi Kami</h5>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                    <span class="text-slate-600 text-sm">Menyelenggarakan pendidikan PAUD berbasis Tauhid.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                    <span class="text-slate-600 text-sm">Menghidupkan majelis ilmu dan dzikir masyarakat.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                    <span class="text-slate-600 text-sm">Membina generasi muda dengan akhlakul karimah.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UNITS SECTION -->
+    <section id="units" class="py-24 bg-slate-50 relative overflow-hidden">
+        <!-- Decorative Background Elements -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-100 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-blue-100 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-block py-1 px-3 rounded-lg bg-brand-100 text-brand-600 text-xs font-bold tracking-widest uppercase mb-4">Layanan Utama</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6">Unit Pendidikan & Dakwah</h2>
+                <p class="text-slate-500 text-lg leading-relaxed">
+                    Sinergi antara pendidikan formal usia dini dan pembinaan spiritual masyarakat untuk membangun peradaban yang mulia.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <!-- Unit 1: PAUD -->
+                <div class="group relative bg-white rounded-[2rem] shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100">
+                    <!-- Image Section -->
+                    <div class="relative h-72 overflow-hidden">
+                        <!-- Updated Image Source -->
+                        <img src="https://penerbitlitnus.co.id/wp-content/uploads/2024/10/Pendidikan-Islam-Multikultural-Inklusif.jpg" alt="PAUD Islam" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                        
+                        <!-- New Gradient Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-900/90 via-brand-900/20 to-transparent opacity-80 transition-opacity z-10"></div>
+
+                        <!-- Floating Badge -->
+                        <div class="absolute top-6 left-6 z-20 bg-white/95 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg flex items-center gap-2">
+                            <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                            <span class="text-sm font-bold text-slate-800">Pendidikan Formal</span>
+                        </div>
+                    </div>
+
+                    <!-- Content Section -->
+                    <div class="p-8 relative">
+                        <!-- Icon Floating Overlap -->
+                        <div class="absolute -top-10 right-8 w-20 h-20 bg-brand-600 rounded-2xl shadow-lg flex items-center justify-center text-white text-3xl transform group-hover:rotate-12 transition duration-500 border-4 border-white z-20">
+                            <i class="fas fa-shapes"></i>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition">PAUD Islam Bustan As Sofa</h3>
+                        <p class="text-slate-400 text-sm font-medium mb-6">Mencetak Generasi Qurani Sejak Dini</p>
+
+                        <p class="text-slate-600 mb-8 leading-relaxed">
+                            Kurikulum terpadu yang menggabungkan standar nasional dengan nilai-nilai keislaman, tahfidz dasar, dan pembentukan karakter akhlakul karimah.
+                        </p>
+
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl">
+                                <i class="fas fa-quran text-brand-500"></i>
+                                <span class="text-sm font-bold text-slate-700">Tahfidz Juz 30</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl">
+                                <i class="fas fa-gamepad text-brand-500"></i>
+                                <span class="text-sm font-bold text-slate-700">Fun Learning</span>
+                            </div>
+                        </div>
+
+                        <a href="#" class="inline-flex w-full items-center justify-center py-4 bg-slate-900 text-white rounded-xl font-bold hover:bg-brand-600 transition group-hover:shadow-lg group-hover:shadow-brand-500/30">
+                            Info Pendaftaran <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Unit 2: Majelis -->
+                <div class="group relative bg-white rounded-[2rem] shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100">
+                    <!-- Image Section -->
+                    <div class="relative h-72 overflow-hidden">
+                        <!-- Updated Image Source -->
+                        <img src="https://www.harapanrakyat.com/wp-content/uploads/2021/11/Keutamaan-Menghadiri-Majelis-Ilmu-Allah-Mudahkan-Jalan-Menuju-Surga.jpg" alt="Majelis Pengajian" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                        
+                        <!-- New Gradient Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-900/90 via-brand-900/20 to-transparent opacity-80 transition-opacity z-10"></div>
+
+                        <!-- Floating Badge -->
+                        <div class="absolute top-6 left-6 z-20 bg-white/95 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg flex items-center gap-2">
+                            <div class="w-2 h-2 rounded-full bg-brand-600 animate-pulse"></div>
+                            <span class="text-sm font-bold text-slate-800">Majelis Ilmu</span>
+                        </div>
+                    </div>
+
+                    <!-- Content Section -->
+                    <div class="p-8 relative">
+                        <!-- Icon Floating Overlap -->
+                        <div class="absolute -top-10 right-8 w-20 h-20 bg-brand-800 rounded-2xl shadow-lg flex items-center justify-center text-white text-3xl transform group-hover:-rotate-12 transition duration-500 border-4 border-white z-20">
+                            <i class="fas fa-mosque"></i>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition">Majelis Zawiyah Idrisiah</h3>
+                        <p class="text-slate-400 text-sm font-medium mb-6">Pusat Tazkiyatun Nafs & Kajian Kitab</p>
+
+                        <p class="text-slate-600 mb-8 leading-relaxed">
+                            Wadah bagi masyarakat umum untuk memperdalam khazanah keilmuan Islam, kajian kitab kuning, dzikir, dan penguatan spiritualitas hati.
+                        </p>
+
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl">
+                                <i class="fas fa-book-open text-brand-800"></i>
+                                <span class="text-sm font-bold text-slate-700">Kitab Kuning</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl">
+                                <i class="fas fa-users text-brand-800"></i>
+                                <span class="text-sm font-bold text-slate-700">Majelis Dzikir</span>
+                            </div>
+                        </div>
+
+                        <a href="#" class="inline-flex w-full items-center justify-center py-4 bg-brand-50 text-brand-700 rounded-xl font-bold hover:bg-brand-800 hover:text-white transition">
+                            Lihat Jadwal <i class="fas fa-calendar-alt ml-2 group-hover:translate-x-1 transition"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFAQ & DONATION SECTION (New Feature: "Jom Infaq" adaptation) -->
+    <section id="infaq" class="py-24 bg-white relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-white to-brand-50/50"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <span class="text-brand-600 font-bold uppercase tracking-wider text-sm">Mari Beramal</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mt-2">Program Infaq & Wakaf</h2>
+                    <p class="text-slate-500 mt-2 max-w-lg">Sisihkan sebagian harta untuk pembangunan fasilitas umat dan pendidikan anak yatim/dhuafa.</p>
+                </div>
+                <a href="#" class="hidden md:inline-flex items-center text-brand-600 font-bold hover:text-brand-800 mt-4 md:mt-0">
+                    Lihat Semua Program <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Campaign 1 -->
+                <div class="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:-translate-y-1 transition duration-300 group">
+                    <div class="relative h-48">
+                        <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" alt="Pembangunan">
+                        <!-- New Gradient Effect -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
+                        <div class="absolute top-4 left-4 bg-brand-600 text-white text-xs font-bold px-3 py-1 rounded-full z-10">Pembangunan</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Renovasi Gedung PAUD</h3>
+                        <p class="text-sm text-slate-500 mb-4 line-clamp-2">Bantu kami memperluas kelas agar lebih banyak santri yang bisa belajar dengan nyaman.</p>
+                        
+                        <!-- Progress Bar -->
+                        <div class="mb-2 flex justify-between text-xs font-bold">
+                            <span class="text-brand-600">Rp 15.000.000</span>
+                            <span class="text-slate-400">Target: Rp 50jt</span>
+                        </div>
+                        <div class="w-full bg-slate-100 rounded-full h-2.5 mb-6">
+                            <div class="bg-brand-500 h-2.5 rounded-full" style="width: 30%"></div>
+                        </div>
+
+                        <button class="w-full py-2.5 bg-brand-600 hover:bg-brand-700 text-white rounded-lg font-bold transition flex items-center justify-center gap-2">
+                            <i class="fas fa-donate"></i> Infaq Sekarang
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Campaign 2 -->
+                <div class="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:-translate-y-1 transition duration-300 group">
+                    <div class="relative h-48">
+                        <img src="https://digital.bsimaslahat.or.id/wp-content/uploads/2025/11/quran-6862296_1280.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" alt="Wakaf Quran">
+                        <!-- New Gradient Effect -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
+                        <div class="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full z-10">Wakaf</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Wakaf 1000 Al-Quran</h3>
+                        <p class="text-sm text-slate-500 mb-4 line-clamp-2">Program tebar Al-Quran untuk masjid-masjid pedalaman Aceh yang membutuhkan.</p>
+                        
+                        <!-- Progress Bar -->
+                        <div class="mb-2 flex justify-between text-xs font-bold">
+                            <span class="text-brand-600">Rp 4.500.000</span>
+                            <span class="text-slate-400">Target: Rp 20jt</span>
+                        </div>
+                        <div class="w-full bg-slate-100 rounded-full h-2.5 mb-6">
+                            <div class="bg-green-500 h-2.5 rounded-full" style="width: 22%"></div>
+                        </div>
+
+                        <button class="w-full py-2.5 bg-brand-600 hover:bg-brand-700 text-white rounded-lg font-bold transition flex items-center justify-center gap-2">
+                            <i class="fas fa-donate"></i> Infaq Sekarang
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Campaign 3 -->
+                <div class="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:-translate-y-1 transition duration-300 group">
+                    <div class="relative h-48">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" alt="Yatim">
+                        <!-- New Gradient Effect -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
+                        <div class="absolute top-4 left-4 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10">Sosial</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Santunan Yatim & Dhuafa</h3>
+                        <p class="text-sm text-slate-500 mb-4 line-clamp-2">Berbagi kebahagiaan dengan anak-anak yatim binaan yayasan setiap bulan.</p>
+                        
+                        <!-- Progress Bar -->
+                        <div class="mb-2 flex justify-between text-xs font-bold">
+                            <span class="text-brand-600">Rp 8.200.000</span>
+                            <span class="text-slate-400">Target: Rp 10jt</span>
+                        </div>
+                        <div class="w-full bg-slate-100 rounded-full h-2.5 mb-6">
+                            <div class="bg-orange-500 h-2.5 rounded-full" style="width: 82%"></div>
+                        </div>
+
+                        <button class="w-full py-2.5 bg-brand-600 hover:bg-brand-700 text-white rounded-lg font-bold transition flex items-center justify-center gap-2">
+                            <i class="fas fa-donate"></i> Infaq Sekarang
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWS SECTION (New Feature) -->
+    <section id="news" class="py-24 bg-brand-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between mb-12">
+                <h2 class="text-3xl font-bold">Berita & Kegiatan Terbaru</h2>
+                <a href="#" class="text-brand-400 hover:text-white transition font-semibold text-sm">Lihat Semua Berita</a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- News Item 1 -->
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden rounded-xl mb-4 h-48 relative">
+                        <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="News" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <!-- New Gradient Effect (Always visible now, enhanced on hover) -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="text-brand-400 text-xs font-bold mb-2">12 OKTOBER 2023</div>
+                    <h3 class="font-bold text-lg leading-snug group-hover:text-brand-400 transition">Peringatan Maulid Nabi Muhammad SAW di Yayasan</h3>
+                </div>
+
+                <!-- News Item 2 -->
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden rounded-xl mb-4 h-48 relative">
+                        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="News" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <!-- New Gradient Effect -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="text-brand-400 text-xs font-bold mb-2">25 SEPTEMBER 2023</div>
+                    <h3 class="font-bold text-lg leading-snug group-hover:text-brand-400 transition">Kunjungan Edukasi Santri PAUD ke Museum Tsunami</h3>
+                </div>
+
+                <!-- News Item 3 -->
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden rounded-xl mb-4 h-48 relative">
+                        <img src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="News" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <!-- New Gradient Effect -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="text-brand-400 text-xs font-bold mb-2">10 AGUSTUS 2023</div>
+                    <h3 class="font-bold text-lg leading-snug group-hover:text-brand-400 transition">Majelis Akbar Bersama Ulama Aceh</h3>
+                </div>
+
+                <!-- News Item 4 -->
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden rounded-xl mb-4 h-48 relative">
+                        <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="News" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <!-- New Gradient Effect -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="text-brand-400 text-xs font-bold mb-2">01 AGUSTUS 2023</div>
+                    <h3 class="font-bold text-lg leading-snug group-hover:text-brand-400 transition">Pembukaan Pendaftaran Santri Baru Tahun Ajaran 2024</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (Enhanced with more details) -->
+    <footer id="contact" class="bg-slate-900 text-white pt-20 pb-10 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <!-- Brand Info -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhq0JnEgRuwQY7DPTRdOeKwlSS7cAX5LKeuD8K_Siyny5Sm0sUE6AVz5gWCikeCT6ksE0eAglo2igDnAOUwiZk6deaHM6-TLj6RB-DSPQv5lWS84hMJxuMF5GviIBREXrVXZ-tuvMp-m2GQece9cB5Sk6JhkvBMzfB8nXBsK8nH33Ggnz6cz_9ZGENVgMM/s1600/LOGO%20BUSTAN%20SOFA.jpg" 
+                             alt="Logo Yayasan Sofa Aceh" 
+                             class="h-12 w-auto rounded-full bg-white p-0.5 shadow-glow">
+                        <h2 class="text-2xl font-bold">Yayasan Sofa Aceh</h2>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed mb-6 pr-10">
+                        Yayasan Sofa Aceh adalah lembaga pendidikan dan sosial keagamaan yang berkhidmat untuk umat. Kami berkomitmen mencetak generasi yang intelek, religius, dan berjiwa sosial tinggi.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 hover:text-white transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-pink-600 hover:text-white transition duration-300"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-red-600 hover:text-white transition duration-300"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 hover:text-white transition duration-300"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-white">Tautan Cepat</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-slate-400 hover:text-brand-400 transition">Beranda</a></li>
+                        <li><a href="#about" class="text-slate-400 hover:text-brand-400 transition">Tentang Kami</a></li>
+                        <li><a href="#units" class="text-slate-400 hover:text-brand-400 transition">PAUD Islam</a></li>
+                        <li><a href="#units" class="text-slate-400 hover:text-brand-400 transition">Majelis Zawiyah</a></li>
+                        <li><a href="#infaq" class="text-slate-400 hover:text-brand-400 transition">Program Donasi</a></li>
+                    </ul>
+                </div>
+
+                <!-- Address -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-white">Hubungi Kami</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-brand-500 mt-1.5 mr-3 w-5 text-center"></i>
+                            <span class="text-slate-300 text-sm">
+                                Jl. Prada Utama, Lorong Mushalla,<br>
+                                Perumahan Genting Biru,<br>
+                                Dusun Kayee Adang.
+                            </span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-brand-500 mr-3 w-5 text-center"></i>
+                            <span class="text-slate-300 text-sm">+62 812-3456-7890</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-brand-500 mr-3 w-5 text-center"></i>
+                            <span class="text-slate-300 text-sm">admin@yayasansofaaceh.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-slate-500 text-sm">
+                <p>&copy; 2024 Yayasan Sofa Aceh. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">Didesain dengan <i class="fas fa-heart text-red-500 mx-1"></i> untuk Umat</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const navbar = document.getElementById('navbar');
+
+        // Mobile Menu Toggle
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.replace('bg-white/95', 'bg-white/98');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.replace('bg-white/98', 'bg-white/95');
+            }
+        });
+    </script>
+</body>
+</html>
