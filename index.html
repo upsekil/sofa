@@ -128,49 +128,52 @@
     </nav>
 
     <!-- HERO SECTION -->
-    <!-- Added pb-32 to create space for the bottom stats bar -->
-    <section id="home" class="hero-bg min-h-[650px] flex items-center relative overflow-hidden pb-32 lg:pb-24">
+    <!-- Layout diperbaiki: Menggunakan flex-col untuk Mobile agar stats bar tidak menumpuk -->
+    <section id="home" class="hero-bg min-h-screen lg:min-h-[650px] flex flex-col relative overflow-hidden">
         <!-- Decorative shapes -->
         <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-brand-900/50 to-transparent pointer-events-none"></div>
         
-        <!-- Added pt-20 for mobile top spacing -->
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-20 lg:pt-0">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="text-center lg:text-left">
-                    <span class="inline-block py-1.5 px-4 rounded-full bg-brand-500/20 border border-brand-400/30 text-brand-100 text-sm font-bold mb-6 backdrop-blur-md uppercase tracking-wider">
-                        <i class="fas fa-star text-brand-gold mr-2"></i> Khazanah Pendidikan Islam Aceh
-                    </span>
-                    <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
-                        Membangun Generasi <span class="text-brand-500">Rabbani</span> & Berakhlak Mulia
-                    </h1>
-                    <p class="text-lg md:text-xl text-slate-200 mb-10 leading-relaxed font-light">
-                        Yayasan Sofa Aceh hadir sebagai wadah pembinaan umat melalui pendidikan usia dini (PAUD) berkualitas dan majelis ilmu yang menghidupkan hati.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="#infaq" class="px-8 py-4 bg-brand-500 text-white rounded-full font-bold hover:bg-brand-400 transition shadow-glow flex items-center justify-center gap-2 group">
-                            Salurkan Infaq <i class="fas fa-heart text-white group-hover:scale-110 transition"></i>
-                        </a>
-                        <a href="#about" class="px-8 py-4 bg-transparent border-2 border-slate-300/30 text-white rounded-full font-bold hover:bg-white/10 transition backdrop-blur-sm">
-                            Tentang Kami
-                        </a>
+        <!-- Main Content Wrapper -->
+        <!-- flex-grow memastikan konten ini mengisi ruang kosong yang ada sebelum stats bar -->
+        <div class="flex-grow flex items-center relative z-10 pt-24 pb-10 lg:py-0">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-center lg:text-left">
+                        <span class="inline-block py-1.5 px-4 rounded-full bg-brand-500/20 border border-brand-400/30 text-brand-100 text-sm font-bold mb-6 backdrop-blur-md uppercase tracking-wider">
+                            <i class="fas fa-star text-brand-gold mr-2"></i> Khazanah Pendidikan Islam Aceh
+                        </span>
+                        <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
+                            Membangun Generasi <span class="text-brand-500">Rabbani</span> & Berakhlak Mulia
+                        </h1>
+                        <p class="text-lg md:text-xl text-slate-200 mb-10 leading-relaxed font-light">
+                            Yayasan Sofa Aceh hadir sebagai wadah pembinaan umat melalui pendidikan usia dini (PAUD) berkualitas dan majelis ilmu yang menghidupkan hati.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="#infaq" class="px-8 py-4 bg-brand-500 text-white rounded-full font-bold hover:bg-brand-400 transition shadow-glow flex items-center justify-center gap-2 group">
+                                Salurkan Infaq <i class="fas fa-heart text-white group-hover:scale-110 transition"></i>
+                            </a>
+                            <a href="#about" class="px-8 py-4 bg-transparent border-2 border-slate-300/30 text-white rounded-full font-bold hover:bg-white/10 transition backdrop-blur-sm">
+                                Tentang Kami
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <!-- Hero Image/Video Placeholder -->
-                <div class="hidden lg:block relative">
-                    <div class="absolute inset-0 bg-brand-600 rounded-2xl transform rotate-6 opacity-20 blur-lg"></div>
-                    <!-- Frame putih (bg-white p-2) telah dihapus, ditambahkan overflow-hidden agar sudut foto tetap tumpul -->
-                    <div class="relative rounded-2xl shadow-2xl transform rotate-3 hover:rotate-0 transition duration-500 overflow-hidden group">
-                        <img src="https://linggaupos.bacakoran.co/upload/5fb9e899da2dd5cc95d496e7cbc584c7.jpg" alt="Santri Mengaji" class="w-full object-cover h-[450px]">
-                        <!-- New Gradient Effect -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-brand-900/80 via-transparent to-transparent opacity-80"></div>
-                        
-                        <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur p-4 rounded-xl shadow-lg flex items-center gap-4 z-10">
-                            <div class="w-12 h-12 bg-brand-100 rounded-full flex items-center justify-center text-brand-600 text-xl">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-slate-500 font-semibold uppercase">Moto Kami</p>
-                                <p class="text-sm font-bold text-slate-800">"Mendidik dengan Hati, Mengabdi untuk Ilahi"</p>
+                    <!-- Hero Image/Video Placeholder -->
+                    <div class="hidden lg:block relative">
+                        <div class="absolute inset-0 bg-brand-600 rounded-2xl transform rotate-6 opacity-20 blur-lg"></div>
+                        <!-- Frame putih (bg-white p-2) telah dihapus, ditambahkan overflow-hidden agar sudut foto tetap tumpul -->
+                        <div class="relative rounded-2xl shadow-2xl transform rotate-3 hover:rotate-0 transition duration-500 overflow-hidden group">
+                            <img src="https://linggaupos.bacakoran.co/upload/5fb9e899da2dd5cc95d496e7cbc584c7.jpg" alt="Santri Mengaji" class="w-full object-cover h-[450px] transform group-hover:scale-105 transition duration-700">
+                            <!-- Updated Gradient Effect: Darkens on hover -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-900/90 via-brand-900/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500"></div>
+                            
+                            <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur p-4 rounded-xl shadow-lg flex items-center gap-4 z-10">
+                                <div class="w-12 h-12 bg-brand-100 rounded-full flex items-center justify-center text-brand-600 text-xl">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-500 font-semibold uppercase">Moto Kami</p>
+                                    <p class="text-sm font-bold text-slate-800">"Mendidik dengan Hati, Mengabdi untuk Ilahi"</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -179,7 +182,8 @@
         </div>
         
         <!-- Stats Bar (New Feature) -->
-        <div class="absolute bottom-0 w-full bg-brand-900/80 backdrop-blur-md border-t border-white/10">
+        <!-- Perbaikan: Gunakan 'relative' di Mobile agar mendorong konten ke bawah, 'absolute' di Desktop agar overlay -->
+        <div class="relative w-full bg-brand-900/80 backdrop-blur-md border-t border-white/10 z-20 lg:absolute lg:bottom-0">
             <div class="max-w-7xl mx-auto px-4 py-6">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white divide-x divide-white/10">
                     <div>
@@ -315,8 +319,8 @@
                         <!-- Updated Image Source -->
                         <img src="https://penerbitlitnus.co.id/wp-content/uploads/2024/10/Pendidikan-Islam-Multikultural-Inklusif.jpg" alt="PAUD Islam" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
                         
-                        <!-- New Gradient Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-brand-900/90 via-brand-900/20 to-transparent opacity-80 transition-opacity z-10"></div>
+                        <!-- Updated Gradient Overlay: Stronger on hover -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-900/95 via-brand-900/30 to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
 
                         <!-- Floating Badge -->
                         <div class="absolute top-6 left-6 z-20 bg-white/95 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg flex items-center gap-2">
@@ -363,8 +367,8 @@
                         <!-- Updated Image Source -->
                         <img src="https://www.harapanrakyat.com/wp-content/uploads/2021/11/Keutamaan-Menghadiri-Majelis-Ilmu-Allah-Mudahkan-Jalan-Menuju-Surga.jpg" alt="Majelis Pengajian" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
                         
-                        <!-- New Gradient Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-brand-900/90 via-brand-900/20 to-transparent opacity-80 transition-opacity z-10"></div>
+                        <!-- Updated Gradient Overlay: Stronger on hover -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-900/95 via-brand-900/30 to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
 
                         <!-- Floating Badge -->
                         <div class="absolute top-6 left-6 z-20 bg-white/95 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg flex items-center gap-2">
@@ -427,8 +431,8 @@
                 <div class="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:-translate-y-1 transition duration-300 group">
                     <div class="relative h-48">
                         <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" alt="Pembangunan">
-                        <!-- New Gradient Effect -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
+                        <!-- Updated Gradient Effect -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300"></div>
                         <div class="absolute top-4 left-4 bg-brand-600 text-white text-xs font-bold px-3 py-1 rounded-full z-10">Pembangunan</div>
                     </div>
                     <div class="p-6">
@@ -454,8 +458,8 @@
                 <div class="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:-translate-y-1 transition duration-300 group">
                     <div class="relative h-48">
                         <img src="https://digital.bsimaslahat.or.id/wp-content/uploads/2025/11/quran-6862296_1280.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" alt="Wakaf Quran">
-                        <!-- New Gradient Effect -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
+                        <!-- Updated Gradient Effect -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300"></div>
                         <div class="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full z-10">Wakaf</div>
                     </div>
                     <div class="p-6">
@@ -481,8 +485,8 @@
                 <div class="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:-translate-y-1 transition duration-300 group">
                     <div class="relative h-48">
                         <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" alt="Yatim">
-                        <!-- New Gradient Effect -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
+                        <!-- Updated Gradient Effect -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300"></div>
                         <div class="absolute top-4 left-4 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10">Sosial</div>
                     </div>
                     <div class="p-6">
@@ -520,8 +524,8 @@
                 <div class="group cursor-pointer">
                     <div class="overflow-hidden rounded-xl mb-4 h-48 relative">
                         <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="News" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                        <!-- New Gradient Effect (Always visible now, enhanced on hover) -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+                        <!-- Updated Gradient Effect -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300"></div>
                     </div>
                     <div class="text-brand-400 text-xs font-bold mb-2">12 OKTOBER 2023</div>
                     <h3 class="font-bold text-lg leading-snug group-hover:text-brand-400 transition">Peringatan Maulid Nabi Muhammad SAW di Yayasan</h3>
@@ -531,8 +535,8 @@
                 <div class="group cursor-pointer">
                     <div class="overflow-hidden rounded-xl mb-4 h-48 relative">
                         <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="News" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                        <!-- New Gradient Effect -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+                        <!-- Updated Gradient Effect -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300"></div>
                     </div>
                     <div class="text-brand-400 text-xs font-bold mb-2">25 SEPTEMBER 2023</div>
                     <h3 class="font-bold text-lg leading-snug group-hover:text-brand-400 transition">Kunjungan Edukasi Santri PAUD ke Museum Tsunami</h3>
@@ -542,8 +546,8 @@
                 <div class="group cursor-pointer">
                     <div class="overflow-hidden rounded-xl mb-4 h-48 relative">
                         <img src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="News" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                        <!-- New Gradient Effect -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+                        <!-- Updated Gradient Effect -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300"></div>
                     </div>
                     <div class="text-brand-400 text-xs font-bold mb-2">10 AGUSTUS 2023</div>
                     <h3 class="font-bold text-lg leading-snug group-hover:text-brand-400 transition">Majelis Akbar Bersama Ulama Aceh</h3>
@@ -553,8 +557,8 @@
                 <div class="group cursor-pointer">
                     <div class="overflow-hidden rounded-xl mb-4 h-48 relative">
                         <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="News" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                        <!-- New Gradient Effect -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+                        <!-- Updated Gradient Effect -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300"></div>
                     </div>
                     <div class="text-brand-400 text-xs font-bold mb-2">01 AGUSTUS 2023</div>
                     <h3 class="font-bold text-lg leading-snug group-hover:text-brand-400 transition">Pembukaan Pendaftaran Santri Baru Tahun Ajaran 2024</h3>
