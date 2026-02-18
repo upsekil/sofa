@@ -135,7 +135,8 @@
         
         <!-- Main Content Wrapper -->
         <!-- flex-grow memastikan konten ini mengisi ruang kosong yang ada sebelum stats bar -->
-        <div class="flex-grow flex items-center relative z-10 pt-24 pb-10 lg:py-0">
+        <!-- PERBAIKAN: Menambahkan 'lg:pb-32' agar konten naik ke atas pada desktop, menghindari tabrakan dengan stats bar -->
+        <div class="flex-grow flex items-center relative z-10 pt-24 pb-10 lg:pt-0 lg:pb-32">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div class="text-center lg:text-left">
